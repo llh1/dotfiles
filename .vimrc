@@ -9,8 +9,9 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+" NerdTree
 " close vim if the only window left open is a NERDTree
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " vim theme
 " colorscheme desert
@@ -19,10 +20,6 @@ syntax enable
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-"highlight Normal ctermbg=DarkBlue gui=bold
-
-" Display the contextual menu on tab key
-" let g:SuperTabDefaultCompletionType = "context"
 
 set nowrap " don't wrap lines
 set number " always show line numbers
@@ -41,7 +38,7 @@ set incsearch " show search matches as you type
 " runtime macros/matchit.vim
 
 nmap <F7> :NERDTree<CR>
-" nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 set history=1000 " remember more commands and search history
 set undolevels=1000 " use many muchos levels of undo
@@ -68,3 +65,9 @@ let mapleader=","
 
 " ControlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Powerline
+python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/");
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup

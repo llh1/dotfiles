@@ -5,8 +5,7 @@ ZSH=/Users/loic/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="sunrise"
-ZSH_THEME="mortalscumbag"
+ZSH_THEME="afowler"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -47,12 +46,12 @@ ZSH_THEME="mortalscumbag"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/loic/.local/bin:/home/loic/bin
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -68,11 +67,19 @@ export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# ====================
+# Console look'n'feel
+# ====================
+
 # Take the color from LS_COLORS for tab completion
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+export CLICOLOR=1;
+export LSCOLORS=exfxcxdxbxegedabagacad;
+export LS_OPTIONS='--color=auto'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Grep
+export GREP_OPTIONS='--color=auto'
 
+# Aliases
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -81,5 +88,18 @@ alias gd='git diff '
 alias go='git checkout '
 alias gh='git hist '
 
+# Locale
 export LC_ALL=en_US.utf-8 
 export LANG="$LC_ALL"
+
+# Move forward and backward
+bindkey -e
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+
+# ======================
+# Application specifics
+# ======================
+
+# Docker
+export DOCKER_HOST=tcp://127.0.0.1:4243
