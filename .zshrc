@@ -7,6 +7,8 @@ ZSH=/Users/loic/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="afowler"
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -52,6 +54,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/loic/.local/bin:/home/loic/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/bin # Add personal bin folder
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -87,6 +90,8 @@ alias gc='git commit -m '
 alias gd='git diff '
 alias go='git checkout '
 alias gh='git hist '
+alias dev='cd ~/Development/'
+alias vi=vim
 
 # Locale
 export LC_ALL=en_US.utf-8 
