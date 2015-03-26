@@ -36,6 +36,7 @@ set showmatch " set show matching parenthesis
 set ignorecase " ignore case when searching
 set hlsearch " highlight search terms
 set incsearch " show search matches as you type
+set backspace=indent,eol,start
 
 " runtime macros/matchit.vim
 
@@ -57,7 +58,6 @@ nnoremap ; :
 
 " change the mapleader from \ to ,
 let mapleader=","
-
 
 " Powerline
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/

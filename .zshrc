@@ -46,7 +46,6 @@ ZSH_THEME="sunrise"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -79,8 +78,18 @@ alias gc='git commit -m '
 alias gd='git diff '
 alias go='git checkout '
 alias gh='git hist '
-alias pixum='/opt/Pixum/Livre\ photo\ Pixum/Livre\ photo\ Pixum'
 
 if [[ ! $TERM =~ screen ]]; then
   exec tmux
 fi
+alias dev='cd ~/Development/'
+alias vi=vim
+
+# Locale
+export LC_ALL=en_US.utf-8 
+export LANG="$LC_ALL"
+
+# Move forward and backward
+bindkey -e
+bindkey '[C' forward-word
+bindkey '[D' backward-word
